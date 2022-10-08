@@ -1,0 +1,68 @@
+.Modal {
+    position: fixed;
+    z-index: 200;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    transition: all 0.3s;
+}
+.ModelOpen{
+    /* display: block;
+    opacity: 1;
+    transform: translateY(0); */
+    animation: openModel 0.3s ease-out forwards;
+}
+.ModelClose{
+    /* display: none;
+    opacity: 0;
+    transform: translateY(-100); */
+    animation: closeModel 1s ease-out forwards;
+}
+.fade-slide-enter{
+    opacity: 0;
+}
+.fade-slide-enter-active{
+    animation: openModel 0.3s ease-out forwards;
+}
+.fade-slide-exit{
+    opacity: 1;
+}
+.fade-slide-exit-active{
+    animation: closeModel 1s ease-out forwards;
+}
+
+@keyframes openModel{
+    0%{
+        opacity: 0;
+        transform:translateY(-100%)
+    }
+    50%{
+        opacity: 1;;
+        transform: translateY(90%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes closeModel{
+    0%{
+        opacity: 1;
+        transform:translateY(0)
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(60%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-100);
+    }
+}
